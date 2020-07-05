@@ -10,7 +10,7 @@ todoButton.addEventListener("click", addTodo);
 function addTodo(event) {
   // prevent form from submitting
   event.preventDefault();
-  // ttodo div
+  // todo div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
   // Create LI
