@@ -11,7 +11,7 @@ todoList.addEventListener("click", deleteCheck);
 function addTodo(event) {
   // prevent form from submitting
   event.preventDefault();
-  // div todo
+  // ttodo div
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
   // Create LI
@@ -40,11 +40,7 @@ function deleteCheck(e) {
   // delete  todo
   if (item.classList[0] === "trash-btn") {
     const todo = item.parentElement;
-    // Animation
-    todo.classList.add("fall");
-    todo.addEventListener("transitionend", function () {
-      todo.remove();
-    });
+    todo.remove();
   }
   // check mark
   if (item.classList[0] === "complete-btn") {

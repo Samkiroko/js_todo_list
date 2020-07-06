@@ -101,12 +101,11 @@ form button:hover {
 }
 
 select {
-  -webkit-appearance: none !important;
-  -moz-appearance: none !important;
-  box-shadow: none !important;
-  appearance: none !important;
-  outline: none !important;
-  border: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
 }
 
 .select {
@@ -124,15 +123,10 @@ select {
 
 .select::after {
   content: "\25BC";
-  position: absolute;
+  position: relative;
   background: #ff6f47;
   top: 0;
   right: 0;
   padding: 1rem;
   pointer-events: none;
-  transition: all 0.3s ease;
-}
-.select:hover::after {
-  background: white;
-  color: #ff6f47;
 }
