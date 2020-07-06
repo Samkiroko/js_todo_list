@@ -5,7 +5,6 @@ const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
 // Event Listeners
-document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("click", filterTodo);
@@ -47,7 +46,6 @@ function deleteCheck(e) {
     const todo = item.parentElement;
     // Animation
     todo.classList.add("fall");
-    removeLocalTodos(todo);
     todo.addEventListener("transitionend", function () {
       todo.remove();
     });
@@ -96,7 +94,8 @@ function saveLocalTodos(todo) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
-function getTodos() {
+function getTods() {
+  let todos;
   // check -- Hey do i already have thing in there?
   let todos;
   if (localStorage.getItem("todos") === null) {
@@ -113,7 +112,8 @@ function getTodos() {
     newTodo.innerText = todo;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
-
+    // add todo to localstorage
+    saveLocalTodos(todoInput.value);
     // check mark button
     const completedButton = document.createElement("button");
     completedButton.innerHTML = '<i class= "fas fa-check"></i>';
@@ -127,16 +127,4 @@ function getTodos() {
     // append  to list
     todoList.appendChild(todoDiv);
   });
-}
-
-function removeLocalTodos(todo) {
-  let todos;
-  if (localStorage.getItem("todos") === null) {
-    todos = [];
-  } else {
-    todos = JSON.parse(localStorage.getItem("todos"));
-  }
-  const todoIndex = todo.children[0].innerText;
-  todos.splice(todos.indexOf(todoIndex), 1);
-  localStorage.setItem("todos", JSON.stringify(todos));
 }
