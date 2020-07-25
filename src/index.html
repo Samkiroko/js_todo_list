@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do-App</title>
+</head>
+
+<body class='bg-dark'>
+<div class='container'>
+    <div class='d-flex justify-content-center pt-3'>
+        <div class='h1 text-light'>To-Do-App</div>
+    </div>
+    <div class='row pt-3 text-light justify-content-md-center'>
+        <div class='col-3 border border-white'>
+
+            <!-- Items -->
+            <div class="d-flex flex-column bd-highlight text-light mb-3 items" id="itemsId">
+                <div class="pt-3"></div>
+
+            </div>
+
+            <!-- Create project button -->
+            <div class='d-flex justify-content-start bd-highlight text-light mb-3' id='createProjectSpace'>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus-square btns" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg" id="addProjectBtn">
+                    <path fill-rule="evenodd"
+                          d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"></path>
+                    <path fill-rule="evenodd"
+                          d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"></path>
+                    <path fill-rule="evenodd"
+                          d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Tasks -->
+        <div class='col-5 border-top border-bottom border-right border-white' id="tasks">
+            <div class="d-flex flex-column bd-highlight text-light mb-0 spaces" style="display:block !important;"
+                 id="taskSpace1">
+                <div class="pt-3"></div>
+
+            </div>
+            <!-- Add task button -->
+            <div class="d-flex justify-content-end bd-highlight text-light mb-3 pb-0 pt-0 col-md-12 pr-0"
+                 id="taskButtonSpace">
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg" id="addTaskButton">
+                    <path fill-rule="evenodd"
+                          d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"></path>
+                    <path fill-rule="evenodd"
+                          d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"></path>
+                    <path fill-rule="evenodd"
+                          d="M14 1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Task -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+         aria-hidden="true" id="taskModal">
+        <form id='myFormTask' data-toggle="validator" role="form">
+            <div class="modal-dialog modal-sm ">
+                <div class="modal-content border border-success">
+                    <div class="modal-body bg-dark text-light pb-0 pt-0">
+                        <div class="form-group bg-dark pb-0">
+                            <label for="inputTitleTask" class="col-form-label">Title</label>
+                            <input type="text" name="inputTitle" id="inputTitleTask" class="form-control"
+                                   class='bg-dark'/>
+                        </div>
+                        <div class="form-group bg-dark pt-0">
+                            <label for="description" class="col-form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="4"></textarea>
+                        </div>
+                        <div class="form-group bg-dark">
+                            <label for="urgency">Urgency</label>
+                            <input type="range" class="custom-range" min="0" max="2" step="1" id="urgency">
+
+                        </div>
+                        <div class="form-group bg-dark">
+                            <input type="date" class="form-control" id="taskDate">
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-dark text-light border-0 pt-0">
+
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="newTasktBtn" style="
+                                border-radius: 50%;">
+                            <path fill-rule="evenodd"
+                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"></path>
+                        </svg>
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-slash-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-dismiss="modal"
+                             id="cancelTaskBtn" style="
+                                border-radius: 50%;">
+                            <path fill-rule="evenodd"
+                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal Project -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+         aria-hidden="true" id="projectModal">
+        <form id='myForm' data-toggle="validator" role="form">
+            <div class="modal-dialog modal-sm ">
+                <div class="modal-content">
+                    <div class="modal-body bg-dark text-light pb-0">
+                        <div class="form-group bg-dark">
+                            <input type="text" name="inputTitle" id="inputTitleProject" class="form-control"
+                                   class='bg-dark'/>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-dark text-light border-0 pt-0">
+
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check-circle myBtns"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="newProjectBtn" style="
+                                border-radius: 50%;">
+                            <path fill-rule="evenodd"
+                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"></path>
+                        </svg>
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-slash-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-dismiss="modal"
+                             id="cancelProjectBtn" style="
+                                border-radius: 50%;">
+                            <path fill-rule="evenodd"
+                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Modal Task Setting -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+         aria-hidden="true" id="taskSettingModal">
+        <form id='myFormTaskSetting' data-toggle="validator" role="form">
+            <div class="modal-dialog modal-sm ">
+                <div class="modal-content border border-success">
+                    <div class="modal-body bg-dark text-light pb-0 pt-0">
+                        <div class="form-group bg-dark pb-0">
+                            <label for="inputTitleTaskSetting" class="col-form-label">Title</label>
+                            <input type="text" name="inputTitle" id="inputTitleTaskSetting" class="form-control"
+                                   class='bg-dark'/>
+                        </div>
+                        <div class="form-group bg-dark pt-0">
+                            <label for="descriptionTaskSetting" class="col-form-label">Description</label>
+                            <textarea class="form-control" id="descriptionTaskSetting" rows="4"></textarea>
+                        </div>
+                        <div class="form-group bg-dark">
+                            <label for="urgencyTaskSetting">Urgency</label>
+                            <input type="range" class="custom-range" min="0" max="2" step="1" id="urgencyTaskSetting">
+
+                        </div>
+                        <div class="form-group bg-dark">
+                            <input type="date" class="form-control" id="dataTaskSetting">
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-dark text-light border-0 pt-0">
+
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-check-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="saveTaskSetting" style="
+                                border-radius: 50%;">
+                            <path fill-rule="evenodd"
+                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"></path>
+                        </svg>
+                        <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-slash-circle"
+                             fill="currentColor" xmlns="http://www.w3.org/2000/svg" data-dismiss="modal"
+                             id="cancelTaskSetting" style="
+                                border-radius: 50%;">
+                            <path fill-rule="evenodd"
+                                  d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                            <path fill-rule="evenodd"
+                                  d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"></path>
+                        </svg>
+                        <div id="forRewriteTaskId"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Modal Task Info -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+         aria-hidden="true" id="taskInfoModal">
+        <form id='myFormTaskInfo' data-toggle="validator" role="form">
+            <div class="modal-dialog modal-sm ">
+                <div class="modal-content border border-success">
+                    <div class="modal-body bg-dark text-light pb-0 pt-0">
+                        <div class="form-group bg-dark pb-0">
+                            <label for="inputTitleTaskInfo" class="col-form-label">Title</label>
+                            <input type="text" name="inputTitle" id="inputTitleTaskInfo" class="form-control"
+                                   class='bg-dark' readonly/>
+                        </div>
+                        <div class="form-group bg-dark pt-0">
+                            <label for="descriptionTaskInfo" class="col-form-label">Description</label>
+                            <textarea class="form-control" id="descriptionTaskInfo" rows="4" readonly></textarea>
+                        </div>
+                        <div class="form-group bg-dark">
+                            <div style="height: 10px; background: red" class="urgencyInfo"></div>
+                        </div>
+                        <div class="form-group bg-dark">
+                            <input type="date" class="form-control" id="taskDateInfo" readonly>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-dark text-light border-0 pt-0">
+                        <i class="fa fa-times-circle fa-2x" aria-hidden="true" data-dismiss="modal"></i>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
