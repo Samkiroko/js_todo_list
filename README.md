@@ -8,10 +8,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://lucid-visvesvaraya-2281c3.netlify.app/">
+  <a href="https://distracted-bell-c2ccd9.netlify.app/">
     <img src="dist/images/micro.png" alt="Logo" width="80" height="80">
   </a>
- <a href= "https://lucid-visvesvaraya-2281c3.netlify.app/">
+ <a href= "https://distracted-bell-c2ccd9.netlify.app/">
   <h3 align="center">Do todo App with option to create project for each list
   </h3>
   </a>
