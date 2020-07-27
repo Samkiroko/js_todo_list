@@ -1,3 +1,16 @@
+/* eslint-disable import/extensions */
+/* eslint-disable default-case */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable consistent-return */
+/* eslint-disable no-bitwise */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-empty */
+/* eslint-disable max-len */
+/* eslint-disable array-callback-return */
+/* eslint-disable import/no-unresolved */
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery/dist/jquery.min';
 import 'jquery/dist/jquery.slim';
@@ -5,7 +18,7 @@ import 'popper.js/dist/popper-utils.min';
 import 'bootstrap/dist/js/bootstrap.min';
 import 'bootstrap/dist/css/bootstrap.css';
 
-//import $ from 'jquery';
+// import $ from 'jquery';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -15,7 +28,7 @@ import { Project } from './modules/project.js';
 import { Task } from './modules/task.js';
 import './css/index.css';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const addProjectBtn = document.querySelector('#addProjectBtn');
   const projectModal = document.querySelector('#projectModal');
   const newProjectBtn = document.querySelector('#newProjectBtn');
@@ -34,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     cancelTaskBtn,
     newTaskBtn,
     saveTaskSetting,
-    cancelTaskSetting
+    cancelTaskSetting,
   );
 
   task.showTaskModal();

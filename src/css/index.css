@@ -1,27 +1,27 @@
 .delBtn {
-    width: 1.5em;
-    height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .myInput {
-    height: 1.5em;
+  height: 1.5em;
 }
 
 select {
-    font-family: Arial, sans-serif;
-    font-size: 1.1em !important;
-    font-style: italic;
-    height: 1.5em !important;
-    border-radius: 10%;
+  font-family: Arial, sans-serif;
+  font-size: 1.1em !important;
+  font-style: italic;
+  height: 1.5em !important;
+  border-radius: 10%;
 }
 
 .checkbox-1x {
-    transform: scale(1.5);
-    -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transform: scale(1.5);
 }
 
 .custom-control {
-    background-color: dark;
+  background-color: #343a3f;
 }
 
 /* Large desktop */
