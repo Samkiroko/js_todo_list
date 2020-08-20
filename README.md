@@ -44,7 +44,13 @@
 This is a todo list app with option to categorize each list as project.
 by creating a project you can add the todo list.
 
-![image](https://user-images.githubusercontent.com/43377799/88572847-83761c80-d048-11ea-9bc2-26a72361edc2.png)
+## Homepage
+
+![image](https://user-images.githubusercontent.com/43377799/90835830-40148280-e356-11ea-953c-8d9cbefaeb1f.png)
+
+## form
+
+![image](https://user-images.githubusercontent.com/43377799/90835929-a3061980-e356-11ea-890b-bc71cc864dca.png)
 
 <!-- ABOUT THE PROJECT -->
 
