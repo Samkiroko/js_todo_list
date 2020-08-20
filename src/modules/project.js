@@ -89,7 +89,7 @@ export class Project {
       this.renderNewProject(
         project.ProjectName,
         project.ProjectId,
-        project.TaskList,
+        project.TaskList
       );
       project.TaskList.forEach((task) => {});
     });
@@ -107,7 +107,7 @@ export class Project {
     const icon = document.createElement('i');
     mainDiv.setAttribute(
       'class',
-      'pb-2 bd-highlight item d-flex justify-content-between pr-2',
+      'pb-2 bd-highlight item d-flex justify-content-between pr-2'
     );
     mainDiv.setAttribute('id', idParam);
     mainDiv.setAttribute('isActive', 'true');
@@ -115,7 +115,7 @@ export class Project {
     icon.setAttribute('class', 'fa fa-minus-square mt-2 itemIcon');
     taskSpace.setAttribute(
       'class',
-      'd-flex flex-column bd-highlight text-light mb-3 spaces',
+      'd-flex flex-column bd-highlight text-light mb-3 spaces'
     );
     taskSpace.setAttribute('id', `taskSpace${idParam}`);
     taskSpaceFirstDiv.setAttribute('class', 'pt-3');
@@ -133,8 +133,8 @@ export class Project {
         projectName,
         idParam,
         `taskSpace${idParam}`,
-        taskList,
-      ),
+        taskList
+      )
     );
 
     return mainDiv;
