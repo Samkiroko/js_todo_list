@@ -1,13 +1,8 @@
 /* eslint-disable import/extensions */
 /* eslint-disable default-case */
 /* eslint-disable no-restricted-syntax */
-/* eslint-disable consistent-return */
-/* eslint-disable no-bitwise */
-/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable class-methods-use-this */
-/* eslint-disable no-empty */
-/* eslint-disable max-len */
 
 import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,10 +10,6 @@ import 'jquery/dist/jquery.min';
 import 'jquery/dist/jquery.slim';
 import 'popper.js/dist/popper-utils.min';
 import 'bootstrap/dist/js/bootstrap.min';
-import '@fortawesome/fontawesome-free/js/fontawesome';
-import '@fortawesome/fontawesome-free/js/solid';
-import '@fortawesome/fontawesome-free/js/regular';
-import '@fortawesome/fontawesome-free/js/brands';
 
 import { getColorForButton, generateId } from './common';
 import { projectList } from './projectlist';
@@ -107,6 +98,7 @@ export class Task {
       this.rewriteTaskInfo();
       $('#taskSettingModal').modal('hide');
       if (currentElement.classList.contains('taskTitle')) {
+        // continue
       }
       localStorage.clear();
       setItemToLocalStorage(projectList);
